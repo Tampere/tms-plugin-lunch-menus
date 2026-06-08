@@ -1,0 +1,40 @@
+{
+    "name": "tampere/tms-plugin-lunch-menus",
+    "type": "wordpress-plugin",
+    "license": "GPL-3.0-or-later",
+    "description": "TMS Lunch Menus list",
+    "homepage": "https://www.hiondigital.com",
+    "authors": [
+        {
+            "name": "Arttu Erkkilä",
+            "role": "Web Developer",
+            "homepage": "https://github.com/yourname"
+        }
+    ],
+    "minimum-stability": "stable",
+    "keywords": [
+        "wordpress", "wp", "plugin"
+    ],
+    "require": {
+        "php": ">=7.4|^8",
+        "composer/installers": "^v1.10.0"
+    },
+    "autoload": {
+        "psr-4": {"TMS\\Plugin\\LunchMenus\\": "src/"}
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest",
+        "devgeniem/geniem-rules-codesniffer": "^1"
+    },
+    "scripts": {
+        "lint": "vendor/bin/phpcs --standard=phpcs.xml.dist src/ -s --warning-severity=0",
+        "lint-all": "vendor/bin/phpcs --standard=phpcs.xml.dist src/",
+        "lint-fix": "vendor/bin/phpcbf --standard=phpcs.xml.dist --basepath=. .src/"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}
